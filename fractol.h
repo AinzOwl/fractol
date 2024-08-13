@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 16:16:50 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 02:31:56 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/13 03:00:56 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int             ft_strcmp(char *arg, char *str);
 unsigned int    map_colors(unsigned int x, unsigned int x_max);
 int             mandelbrot_iterations(double real, double imag, int max_iterations);
 double          ft_atodbl(const char *str);
-int             check_double(double arg);
+double          check_double(double arg);
 void            error(char *error);
 int             handle_mouse(int button, int x, int y, tdata *data);
 int             close_window(tdata *data);

@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 22:12:26 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 02:32:53 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/13 03:03:43 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_strcmp(char *arg, char *str)
 	return 1;
 }
 
-int check_double(double arg)
+double check_double(double arg)
 {
 	if (arg < -2 || arg > 2)
 		error("Argument must be a double\n");
@@ -70,7 +70,6 @@ unsigned int map_colors(unsigned int x, unsigned int x_max)
 	}
 	return (unsigned int)(((unsigned int)r << 16) | ((unsigned int)g << 8) | (unsigned int)b);
 }
-
 double ft_atodbl(const char *str)
 {
 	int		sign;
