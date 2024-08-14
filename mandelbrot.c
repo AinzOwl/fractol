@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 22:18:41 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 02:31:26 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/14 22:12:48 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void draw_mandelbrot(tdata *data)
 
 void mandelbrot(tdata *data)
 {
-	data->fractal_type = 2;
+	data->fractal_type = 1;
  	draw_mandelbrot(data);
 }
