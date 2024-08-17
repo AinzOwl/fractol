@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 23:08:14 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 02:31:26 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/16 20:05:04 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ void draw_julia(tdata *data)
 			iterations = julia_iterations(real, imag, data->julia_c_real, data->julia_c_imag, data->max_iterations);
 			color = map_colors(iterations, data->max_iterations);
 			pixel_index = (y * data->size_line) + (x * (data->bpp / 8));
-			data->img_data[pixel_index] = color & 0xFF;
-			data->img_data[pixel_index + 1] = (color >> 8) & 0xFF;
-			data->img_data[pixel_index + 2] = (color >> 16) & 0xFF;
-			data->img_data[pixel_index + 3] = (color >> 24) & 0xFF;
+			// data->img_data[pixel_index] = color & 0xFF;
+			data->img_data[pixel_index ] = (color >> 8) & 0xFF;
+			data->img_data[pixel_index + 1] = (color >> 16) & 0xFF;
+			data->img_data[pixel_index + 2] = (color >> 24) & 0xFF;
 			x++;
 		}
 		y++;

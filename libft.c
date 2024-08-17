@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 22:12:26 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 03:03:43 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/17 01:15:22 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ double check_double(double arg)
 
 void error(char *error)
 {
-    write(1, "\n\033[31m", 6); 
+    write(1, "\033[31m", 6); 
     while (*error) {
         write(1, error, 1);
         error++;
@@ -80,8 +80,10 @@ double ft_atodbl(const char *str)
 	divisor = 1;
     result = 0.0;
 
-    while ((*str >= 9 && *str <= 13) || 32 == *str)
+    while (*str == ' ')
 		++str;
+	if (*str == '\0')
+		error("Wrong Value");
 	while ('+' == *str || '-' == *str)
 		if ('-' == *str++)
 			sign = -sign;
@@ -89,10 +91,15 @@ double ft_atodbl(const char *str)
 		result = result * 10.0 + (*str++ - '0');	
 	if ('.' == *str)
 		++str;
-	while (*str)
+	while (*str >= '0' && *str <= '9')
 	{
 		divisor *= 10;
 		result += (*str++ - '0') / divisor;
 	}
+	while (*str == ' ')
+        ++str;
+    
+    if (*str != '\0')
+        error("Wrong value");
     return sign * result;
 }

@@ -6,7 +6,7 @@
 /*   By: efelaous <efelaous@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 22:04:18 by efelaous          #+#    #+#             */
-/*   Updated: 2024/08/13 02:34:26 by efelaous         ###   ########.fr       */
+/*   Updated: 2024/08/17 00:08:12 by efelaous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ tdata init( tdata data)
     data.img_data = mlx_get_data_addr(data.img, &data.bpp, &data.size_line, &data.endian);
     return data;
 }
-
 int main(int argc, char **argv)
 {
     tdata data;
@@ -82,7 +81,11 @@ int main(int argc, char **argv)
     data.zoom = 1;
     data = init(data);
     if (ft_strcmp(argv[1], "mandelbrot"))
+	{
+		if (argc != 2)
+			error("Mandelbrot takes no arguments");
         mandelbrot(&data);
+	}
     else if (ft_strcmp(argv[1], "julia"))
         julia(&data, argc, argv);
     else
